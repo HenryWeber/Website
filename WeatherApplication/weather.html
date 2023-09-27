@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+ 
+  <script type="text/javascript"> //<![CDATA[
+    var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+    document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+  //]]></script>
+  <script language="JavaScript" type="text/javascript">
+    TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_lg_222x54.png", "POSDV", "none");
+  </script>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="style.css"></link>
+  <link rel="stylesheet" href="weather_style.css"></link>
+
+</head>
+
+
+    <body>
+
+        <!-- Header -->
+        <div class="header">
+          <h1>Henry Weber's Website/Portfolio</h1>
+        </div>
+        
+        <!-- Navigation Bar -->
+        <div class="navbar">
+        <a href="index.html">Home</a>
+          <a href="weather.html">Weather Application</a>
+          <a href="login.html">Login Profile</a>
+          <a href="landing.php">Movie Database</a>
+        </div>
+        
+        <!-- Start of Wrapper Class -->    
+            <div class="wrapper">
+                
+                <!-- Search Bar -->  
+                <div class="search">
+                    <input type="text" placeholder="Enter A City Name" spellcheck="false">
+                    <button><img src="images/search.png"></button>
+                </div>
+                <!-- Error Message -->  
+                <div class="error">
+                    <p>Invalid City Name</p>
+                </div>
+                <!-- Weather Content--> 
+                <div class="weather">
+                    <img src="images/rain.png" class="weather-icon">
+                    <h1 class="temp"></h1>
+                    <h2 class="city"></h2>
+                    
+                    <!-- Weather Details --> 
+                    <div class="details">
+                        
+                        <!-- Humidity --> 
+                        <div class="col">
+                            <img src="images/humidity.png">
+                            <div>
+                                <p class="humidity">0%</p>
+                                <p>Humidity</p>
+                            </div>    
+                        </div>
+                        <!-- Wind -->
+                        <div class="col">
+                            <img src="images/wind.png">
+                            <div>
+                                <p class="wind">0 km/h</p>
+                                <p>Wind Speed</p>
+                            </div>    
+                        </div>
+    
+                    </div>
+                </div>
+            
+            <script>
+                const apiKey = "7b27793ecd7b2761d7474aca54ec0434";
+                const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
+            
+                const searchBox = document.querySelector(".search input");
+                const searchBtn = document.querySelector(".search button");
+                const weatherIcon = document.querySelector(".weather-icon");
+            
+                async function checkWeather(city){
+                    const response = await fetch(apiUrl + city + '&appid=' + apiKey + '&units=metric');
+            
+                    if(response.status == 404){
+                        document.querySelector(".error").style.display = "block";
+                        document.querySelector("weather").style.display = "none";
+                    } else{
+                        var data = await response.json();
+            
+                    document.querySelector(".city").innerHTML = data.name;
+                    document.querySelector(".temp").innerHTML = Math.round(data.main.temp)  + " C";
+                    document.querySelector(".humidity").innerHTML = data.main.humidity + " %";
+                    document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+            
+                    if(data.weather[0].main == "Clouds"){
+                        weatherIcon.src = "images/clouds.png";
+                    }else if(data.weather[0].main == "Clear"){
+                        weatherIcon.src = "images/clear.png";
+                    }else if(data.weather[0].main == "Rain"){
+                        weatherIcon.src = "images/rain.png";
+                    }else if(data.weather[0].main == "Drizzle"){
+                        weatherIcon.src = "images/drizzle.png";
+                    }else if(data.weather[0].main == "Mist"){
+                        weatherIcon.src = "images/mist.png";
+                }
+                document.querySelector(".weather").style.display = "block";
+                document.querySelector(".error").style.display = "none";
+                    }
+            
+                    
+            }
+            searchBtn.addEventListener("click", ()=>{
+                checkWeather(searchBox.value);
+            })
+            //checkWeather();
+            </script>
+
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+          <h2>Thank you for your time!</h2>
+        </div>
+
+    </body>
+</html>
