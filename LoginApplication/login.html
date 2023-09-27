@@ -7,19 +7,35 @@
         <link href="login_style.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
+		<div class="wrapper">
+			<!-- Header -->
+			<div class="header">
+			  <h1>Login Project</h1>
+			</div>
+
 		
-			<h1>Login(user:test password:test)</h1>
-			<form action="authenticate.php" method="post">
-				<label for="username">
-					<i class="fas fa-user"></i>
-				</label>
-				<input type="text" name="username" placeholder="Username" id="username" required>
-				<label for="password">
-					<i class="fas fa-lock"></i>
-				</label>
-				<input type="password" name="password" placeholder="Password" id="password" required>
-				<input type="submit" value="Login">
-			</form>
-		
+			<h2>Login<br></h2>
+			<h3>(user:test password:test)</h3>
+			
+			<div class="form">
+				<form action="authenticate.php" method="post">
+					<label for="username">Username</label>
+					<br>
+					<input type="text" name="username" placeholder="Username" id="username" required>
+					<br>
+					<label for="password">Password</label>
+					<br>
+					<input type="password" name="password" placeholder="Password" id="password" required>
+					<br>
+					<input class="button" type="submit" value="Login">
+				</form>
+			</div>
+
+		</div>      
+			<!-- Footer -->
+			<div class="footer">
+				<h2>Thank you for your time!</h2>
+			  </div>
+		  
 	</body>
 </html>

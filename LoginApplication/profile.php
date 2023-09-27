@@ -29,20 +29,26 @@ $stmt->close();
 		<meta charset="utf-8">
 		<title>Profile Page</title>
 		<link href="style.css" rel="stylesheet" type="text/css">
-		<link href="style_login.css" rel="stylesheet" type="text/css">
+		<link href="login_style.css" rel="stylesheet" type="text/css">
 	</head>
-	<body class="loggedin">
-		<nav class="navtop">
-			<div>
-				<h1>Website Title</h1>
-				<a href="profile.php"><i class="button"></i>Profile</a>
-				<a href="logout.php"><i class="button"></i>Logout</a>
+
+	<body>
+	
+	<div class="wrapper">	
+		<!-- Header -->
+			<div class="header">
+			  <h1>Login Project</h1>
 			</div>
-		</nav>
-		<div class="content">
+
+				    <!-- Navigation Bar -->
+			<div class="navbar">
+				<a href="profile.php" class="button">Profile</a>
+				<a href="logout.php" class="button">Logout</a>
+			</div>			
+
 			<h2>Profile Page</h2>
 			<div>
-				<p>Your account details are below:</p>
+				<p>Your account details are the following:</p>
 				<table>
 					<tr>
 						<td>Username:</td>
@@ -58,6 +64,10 @@ $stmt->close();
 					</tr>
 				</table>
 			</div>
-		</div>
-				</body>
+	</div>
+				<!-- Footer -->
+				<div class="footer">
+					<h2>Thank you for your time!</h2>
+			  	</div>
+</body>
 </html>
