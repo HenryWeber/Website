@@ -1,0 +1,99 @@
+       
+/*Current Page Title*/
+.pageName h2{
+    text-align: center;
+}
+/*Generic Button*/
+.button{
+    width: 100%;
+    background-color:gray;
+    border: none;
+    color: white;
+    padding: 10px 28px;
+    text-align: center;
+    display: inline-block;
+
+
+}
+/*Landing Buttons*/
+.createButton{
+    color:black;
+    width: 100%;
+    border: 5px solid;
+    background-color: blue;
+    text-align: center;
+    display: inline-block;
+}
+.viewButton{
+    color:black;
+    border: 5px solid;
+    background-color: purple;
+    width: 100%;
+    display: inline-block;
+}
+.updateButton{
+    color:black;
+    border: 5px solid;
+    background-color: green;
+    width: 100%;
+    display: inline-block;
+
+}
+.deleteButton{
+    color:black;
+    border: 5px solid;
+    background-color: red;
+    width: 100%;
+    display: inline-block;
+
+}
+/*Button Hovers*/
+.createButton:hover{
+    background-color: blue;
+    color: white;
+}
+.viewButton:hover{
+    background-color: purple;
+    color: white;
+}
+.updateButton:hover{
+    background-color: green;
+    color: white;
+}
+.deleteButton:hover{
+    background-color: red;
+    color: white;
+}
+/*Action Border*/
+.actionBorder{
+    color:black;
+    border: 5px solid;
+}
+/*Wrapper*/
+.wrapper{
+    width: 100%;
+    height:min-content;
+}
+/*Forms*/
+.form-group label{
+    text-align:center;
+    font-size: larger;
+}
+.form-group input{
+    width: 50%;
+}
+/*Table*/
+table{
+    width:100%;
+    border: 5px solid;
+    border-color: black;
+    text-align: center;
+}
+
+thead, tbody, tr, td, th{
+    border: 5px solid;
+    border-color: black;
+}
+
+
+
