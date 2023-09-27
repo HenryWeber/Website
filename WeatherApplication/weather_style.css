@@ -1,0 +1,106 @@
+
+  /* Override body to change background-image*/
+  body {
+    font-family: Arial;
+    margin: 0;
+    font-size: large;
+    background-image: linear-gradient(135deg,#00feba,#5b548a);
+    min-height: 100%;
+    position:relative;
+    text-align: center;
+  }
+/*Override .header to change background-image*/
+.header{
+  padding: 60px;
+  text-align: center;
+  background-image: linear-gradient(225deg,#00feba,#5b548a);
+  color: white;
+}
+/*All Search Elements*/
+.search{
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+
+}
+/*Search Input*/
+.search input{
+  font-size: 18px;
+  background: #ebfffc;
+  color: #555;
+  height: 60px;
+
+  padding: 10px 25px;
+  outline: 0;
+  border: 0;
+  border-radius: 32px;
+  margin-right: 18px;
+
+  flex:1;
+}
+/*Search Button*/
+.search button{
+  border: 0  ;
+  outline: 0 ;
+  background: #ebfffc;
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+  cursor: pointer;
+}
+/*Search Button Image*/
+.search button img{
+  width: 16px;
+}
+
+/*Main Weather Icon and Info*/
+.weather{
+  display: none;
+}
+.weather-icon{
+  width: 170px;
+  margin-top: 30px;
+}
+.weather h1{
+  font-size: 80px;
+  font-weight: 500;
+}
+.weather h2{
+  font-size: 45px;
+  font-weight: 400;
+  margin-top: -10px;
+}
+
+/*Weather Details*/
+.details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+  margin-top: 50px;
+}
+.col{
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.col img{
+  width: 40px;
+  margin-right: 10px;
+}
+/*Humidity and Wind*/
+.humidity, .wind{
+  font-size: 28px;
+  margin-top: -6px;
+}
+
+/*Error Message*/
+.error{
+  text-align: center;
+  margin-left: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+}
