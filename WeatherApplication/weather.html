@@ -31,6 +31,7 @@
           <a href="weather.html">Weather Application</a>
           <a href="login.html">Login Profile</a>
           <a href="landing.php">Movie Database</a>
+          <a href="datastructures.html">Guessing Game</a>
         </div>
         
         <!-- Start of Wrapper Class -->    
@@ -38,6 +39,7 @@
                 
                 <!-- Search Bar -->  
                 <div class="search">
+
                     <input type="text" placeholder="Enter A City Name" spellcheck="false">
                     <button><img src="images/search.png"></button>
                 </div>
@@ -58,7 +60,7 @@
                         <div class="col">
                             <img src="images/humidity.png">
                             <div>
-                                <p class="humidity">0%</p>
+                                <p class="humidity">Please Enter a City Name Above</p>
                                 <p>Humidity</p>
                             </div>    
                         </div>
@@ -66,7 +68,7 @@
                         <div class="col">
                             <img src="images/wind.png">
                             <div>
-                                <p class="wind">0 km/h</p>
+                                <p class="wind">Please Enter a City Name Above</p>
                                 <p>Wind Speed</p>
                             </div>    
                         </div>
@@ -75,22 +77,25 @@
                 </div>
             
             <script>
+
+
                 const apiKey = "7b27793ecd7b2761d7474aca54ec0434";
                 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
             
                 const searchBox = document.querySelector(".search input");
                 const searchBtn = document.querySelector(".search button");
                 const weatherIcon = document.querySelector(".weather-icon");
-            
+
                 async function checkWeather(city){
                     const response = await fetch(apiUrl + city + '&appid=' + apiKey + '&units=metric');
             
                     if(response.status == 404){
                         document.querySelector(".error").style.display = "block";
-                        document.querySelector("weather").style.display = "none";
-                    } else{
+                        document.querySelector(".weather").style.display = "none";
+                    }
+                    else{
                         var data = await response.json();
-            
+                        
                     document.querySelector(".city").innerHTML = data.name;
                     document.querySelector(".temp").innerHTML = Math.round(data.main.temp)  + " C";
                     document.querySelector(".humidity").innerHTML = data.main.humidity + " %";
@@ -113,6 +118,7 @@
             
                     
             }
+            //Event Listener for search bar input
             searchBtn.addEventListener("click", ()=>{
                 checkWeather(searchBox.value);
             })

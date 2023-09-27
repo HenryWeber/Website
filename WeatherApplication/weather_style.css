@@ -6,7 +6,7 @@
     font-size: large;
     background-image: linear-gradient(135deg,#00feba,#5b548a);
     min-height: 100%;
-    position:relative;
+    position: relative;
     text-align: center;
   }
 /*Override .header to change background-image*/
@@ -81,6 +81,7 @@
   justify-content: space-between;
   padding: 0px 20px;
   margin-top: 50px;
+  margin-bottom: 20%;
 }
 .col{
   display: flex;
@@ -103,4 +104,5 @@
   margin-left: 10px;
   font-size: 14px;
   margin-top: 10px;
+  margin-bottom: 50%;
 }
