@@ -148,6 +148,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
   <a href="weather.html">Weather Application</a>
   <a href="login.html">Login Profile</a>
   <a href="landing.php">Movie Database</a>
+  <a href="datastructures.html">Guessing Game</a>
 </div>
     <div class="">
                     <h2 class="pageName">Update Record</h2>

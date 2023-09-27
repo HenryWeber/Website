@@ -101,6 +101,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <a href="weather.html">Weather Application</a>
     <a href="login.html">Login Profile</a>
     <a href="landing.php">Movie Database</a>
+    <a href="datastructures.html">Guessing Game</a>
     </div>
 
                     
