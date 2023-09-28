@@ -5,23 +5,23 @@ $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'henrifiw_user';
 $DATABASE_PASS = 'MyTestingPassword10!';
 $DATABASE_NAME = 'henrifiw_phplogin';
-// Attempt to connect
+// Attempt to connec
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if ( mysqli_connect_errno() ) {
-	// Display the error if it occurs
-	exit('Could notto connect to MySQL DB: ' . mysqli_connect_error());
+	// Display specific error
+	exit('Could not connect to MySQL DB: ' . mysqli_connect_error());
 }
-// Now we check if the data from the login form was submitted, isset() will check if the data exists.
+//Check if the data exists(isset()).
 if ( !isset($_POST['username'], $_POST['password']) ) {
-	// Username and/or password are empty
+	// Empty inputs
 	exit('Please enter the username and password (one or more may be empty)');
 }
 // Prepare our SQL, preparing the SQL statement will prevent SQL injection.
 if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
-	// Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
+	// Bind params s = string, i = int
 	$stmt->bind_param('s', $_POST['username']);
 	$stmt->execute();
-	// Store the result to check if account exists in DB
+	// Check if account exists in DB
 	$stmt->store_result();
 	
     

@@ -1,10 +1,8 @@
 <?php
-// We need to use sessions, so you should always start sessions using the below code.
+// Start session
 session_start();
-// If the user is not logged in redirect to the login page...
-if (!isset($_SESSION['loggedin'])) {//The isset() function will check if a particular variable is declared and therefore prevent such errors from occurring, especially when dealing with HTTP methods.
-	header('Location: login.html');
-	exit;
+// If not logged in redirect to the login pg
+if (!isset($_SESSION['loggedin'])) {//The isset() function will check if var is declared
 }
 ?>
 <!DOCTYPE html>
