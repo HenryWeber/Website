@@ -46,11 +46,10 @@
     
         <script type="text/javascript">
     
-            // Generate a Random Number
+            // Generate a Random Num
             let y = Math.floor(Math.random() * 10 + 1);
     
-            // Counting the number of guesses
-            // made for correct Guess
+            // Counter for number of guesses
             let guess = 1;
     
             document.getElementById("submitguess").onclick = function () {
@@ -59,11 +58,10 @@
                 let x = document.getElementById("guessField").value;
     
                 if (x == y) {
-                    alert("You guessed the number correctly in "
-                        + guess + " attempts");
+                    alert("You guessed the number correctly in " + guess + " attempts");
                 }
     
-                /* If guessed number is greater than actual number*/
+                /* If guessed number is larger than actual number*/
                 else if (x > y) {
                     guess++;
                     alert("Try a smaller integer");
