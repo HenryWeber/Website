@@ -2,11 +2,11 @@
 // Include config file
 require_once "config.php";
  
-// Define variables and initialize with empty values
+// Define vars and init
 $title = $genre = $yearMade = $rating = "";
 $title_err = $genre_err = $yearMade_err = $rating_err = "";
  
-// Processing form data when form is submitted
+// Form Data
 if(isset($_POST["id"]) && !empty($_POST["id"])){  
     // Get hidden input value
     $id = $_POST["id"];
@@ -21,7 +21,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Validate genre genre
     $input_genre = trim($_POST["genre"]);
     if(empty($input_genre)){
-        $genre_err = "Please enter an genre.";     
+        $genre_err = "Please enter a genre.";     
     } else{
         $genre = $input_genre;
     }
@@ -42,85 +42,85 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             $rating = $input_rating;
         }
 
-    // Check input errors before inserting in database
+    // Check if empty
     if(empty($title_err) && empty($genre_err) && empty($yearMade_err) && empty($rating_err)){
         // Prepare an update statement
         $sql = "UPDATE movies SET title=?, genre=?, yearMade=?, rating=? WHERE id=?";
          
         if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
+            // Make stmt
             mysqli_stmt_bind_param($stmt, "ssssi", $param_title, $param_genre, $param_yearMade, $param_rating, $param_id);
             
-            // Set parameters
+            // Set params
             $param_title = $title;
             $param_genre = $genre;
             $param_yearMade = $yearMade;
             $param_rating = $rating;
             $param_id = $id;
             
-            // Attempt to execute the prepared statement
+            // Attempt to exec stmt
             if(mysqli_stmt_execute($stmt)){
-                // Records updated successfully. Redirect to landing page
+                //Redirect to landing pg
                 header("location: landing.php");
                 exit();
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Please try again later, error.";
             }
         }
          
-        // Close statement
+        // Close stmt
         mysqli_stmt_close($stmt);
     }
     
-    // Close connection
+    // Close connec
     mysqli_close($link);
 } else{
-    // Check existence of id parameter before processing further
+    // id check
     if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
-        // Get URL parameter
+        
+        // URL parameter
         $id =  trim($_GET["id"]);
         
-        // Prepare a select statement
+        // stmt
         $sql = "SELECT * FROM movies WHERE id = ?";
         if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
+            // Make stmt
             mysqli_stmt_bind_param($stmt, "i", $param_id);
             
-            // Set parameters
+            // Set param
             $param_id = $id;
             
-            // Attempt to execute the prepared statement
+            // Run stmt
             if(mysqli_stmt_execute($stmt)){
                 $result = mysqli_stmt_get_result($stmt);
     
                 if(mysqli_num_rows($result) == 1){
-                    /* Fetch result row as an associative array. Since the result set
-                    contains only one row, we don't need to use while loop */
+                    /* Fetch result row as an associative array*/
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
-                    // Retrieve individual field value
+                    // Retrieve values
                     $title = $row["title"];
                     $genre = $row["genre"];
                     $yearMade = $row["yearMade"];
                     $rating = $row["rating"];
                 } else{
-                    // URL doesn't contain valid id. Redirect to error page
+                    // Redirect to error pg
                     header("location: error.php");
                     exit();
                 }
                 
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Please try again later, error";
             }
         }
         
-        // Close statement
+        // Close stmt
         mysqli_stmt_close($stmt);
         
-        // Close connection
+        // Close connec
         mysqli_close($link);
     }  else{
-        // URL doesn't contain id parameter. Redirect to error page
+        //Redirect to error pg
         header("location: error.php");
         exit();
     }
@@ -139,7 +139,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     <!-- Header -->
 <div class="header">
   <h1>Henry Weber's Website/Portfolio</h1>
-  <!-- <p>With a <b>flexible</b> layout.</p>-->
+  
 </div>
 
 <!-- Navigation Bar -->
@@ -152,7 +152,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 </div>
     <div class="">
                     <h2 class="pageName">Update Record</h2>
-                    <p>Please edit the input values and submit to update the movie record.</p>
+                    <p>Submit to update the movie record.</p>
+                    
                     <!--Form formatting-->
                     <form action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="post">
                         <div class="form-group">

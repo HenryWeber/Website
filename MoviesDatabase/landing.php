@@ -23,7 +23,7 @@
   <h1>Henry Weber's Website/Portfolio</h1>
 </div>
 
-<!-- Navigation Bar -->
+<!-- NavBar -->
 <div class="navbar">
   <a href="index.html">Home</a>
   <a href="weather.html">Weather Application</a>
@@ -82,10 +82,10 @@
                             // Free result set
                             mysqli_free_result($result);
                         } else{
-                            echo 'No records were found.';
+                            echo 'No records found.';
                         }
                     } else{
-                        echo "Oops! Something went wrong. Please try again later.";
+                        echo "Please try again later, error.";
                     }
  
                     // Close connection

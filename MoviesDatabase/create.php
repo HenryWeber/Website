@@ -4,7 +4,7 @@
 // Config file
 require_once "config.php";
  
-// Define and initialize variables
+// Define and init vars
 $title = $genre = $yearMade = $rating = "";
 $title_err = $genre_err = $yearMade_err  = $rating_err= "";
  
@@ -46,16 +46,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Check if inputs are empty
     if(empty($title_err) && empty($genre_err) && empty($yearMade_err) && empty($rating_err)){
-        // Prepare an insert statement
+        // Prepare an insert stmt
         $sql = "INSERT INTO movies (title, genre, yearMade, rating) VALUES (?,?,?,?)";
         
          
         if($stmt = mysqli_prepare($link, $sql)){
             
 
-            // Bind variables to the prepared statement as parameters
+            // Bind vars to stmt
             mysqli_stmt_bind_param($stmt,"ssss", $param_title, $param_genre, $param_yearMade, $param_rating);
-            // Set parameters
+            // Set params
             $param_title = $title;
             $param_genre = $genre;
             $param_yearMade = $yearMade;
@@ -95,7 +95,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <h1>Henry Weber's Website/Portfolio</h1>
     </div>
 
-    <!-- Navigation Bar -->
+    <!-- Nav Bar -->
     <div class="navbar">
     <a href="index.html">Home</a>
     <a href="weather.html">Weather Application</a>

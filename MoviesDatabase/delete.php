@@ -1,22 +1,22 @@
 <?php
-// Process delete operation after confirmation
+
 if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Include config file
     require_once "config.php";
     
-    // Prepare a delete statement
+    // Make stmt
     $sql = "DELETE FROM movies WHERE id = ?";
     
     if($stmt = mysqli_prepare($link, $sql)){
-        // Bind variables to the prepared statement as parameters
+        // make stmt
         mysqli_stmt_bind_param($stmt, "i", $param_id);
         
-        // Set parameters
+        // Set params
         $param_id = trim($_POST["id"]);
         
-        // Attempt to execute the prepared statement
+        // Attempt to run stmt
         if(mysqli_stmt_execute($stmt)){
-            // Records deleted successfully. Redirect to landing page
+            // Redirect to landing
             header("location: landing.php");
             exit();
         } else{
@@ -24,15 +24,15 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         }
     }
      
-    // Close statement
+    // Close stmt
     mysqli_stmt_close($stmt);
     
-    // Close connection
+    // Close connec
     mysqli_close($link);
 } else{
-    // Check existence of id parameter
+    // Check if id exists
     if(empty(trim($_GET["id"]))){
-        // URL doesn't contain id parameter. Redirect to error page
+        // error msg
         header("location: error.php");
         exit();
     }
@@ -46,13 +46,13 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     <title>Delete Record</title>
     <link rel="stylesheet" href="landing_style.css"></link>
     <link rel="stylesheet" href="style.css"></link>
-    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+    
 </head>
 <body style="background: #1abc9c;">
     <!-- Header -->
 <div class="header">
   <h1>Henry Weber's Website/Portfolio</h1>
-  <!-- <p>With a <b>flexible</b> layout.</p>-->
+  
 </div>
 
 <!-- Navigation Bar -->
