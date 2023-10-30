@@ -25,10 +25,19 @@ You may also change lines 8 and 9 `spring.datasource.username=root` and `spring.
 The Postman json file located in the `Spring Boot>` directory is named `New Collection.postman_collection.json`<br><br>
 This file can be imported into the Postman application by entering a *Workspace* and selecting *Import*<br><br>
 
-<h3 align="center">Running the Java Application</h3>
+<h3 align="center">Double Checking the Java JDK Version</h3>
 
-The project can be imported into the Spring Tool Suite IDE by selecting *File* > *Import...* > *Maven* > *Existing Maven Projects* and selecting the project
-The application can be run in the Spring Tool Suite IDE by right clicking on the project and selecting *Run as* > *Java Application*.
+A common bug I experienced was the library re-defaulting the JDK to version 1.7 and not version 17, in order to fix this please follow these steps...<br><br>
+The project can be imported into the Spring Tool Suite IDE by selecting *File* > *Import...* > *Maven* > *Existing Maven Projects* and selecting the project.<br><br>
+Before running make sure the project is using Java 17 by right clicking on the project and selecting *Properties* > *Java Build Path* > *Module Path* and identifying the JRE System Library is using Java 17.<br><br>
+If it is not using JDK 17, select *Add Library* > *JRE System Library* > *Next* > Now Select *Execution Environment* OR *Alternate JRE* to select the correct JDK version.<br><br>
+Now to check the compiler right click on the project and selecting *Properties* > *Java Compiler* and change *Compiler compliance level:* to *17*<br><br>
+
+<h3 align="center">Running the Application</h3>
+The application can be run in the Spring Tool Suite IDE by right clicking on the project and selecting *Run as* > *Java Application*.<br><br>
+
+
+
 
 
 
