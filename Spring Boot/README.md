@@ -19,3 +19,5 @@ In the `application.properties` file on line 5 `spring.datasource.url=jdbc:mysql
 If the `application.properties` connection protocol is changed then line 2 `spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver` will also need to change accordingly.<br><br>
 You may also change lines 8 and 9 `spring.datasource.username=root` and `spring.datasource.password=testingpassword` to your database connection's username and password<br><br>
 
+<h3 align="center">Setting up the SQL connection</h3>
+
