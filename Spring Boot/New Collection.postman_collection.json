@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "db9dcbec-ee74-4369-89f2-bf668b4ec834",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30506238"
+	},
+	"item": [
+		{
+			"name": "addBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\" : \"The Fellowship of the Ring\",\r\n    \"author\" : \"J. R. R. Tolkien\",\r\n    \"publisher\": \"George Allen and Unwin\",\r\n    \"pages\": 423,\r\n    \"publicationDate\": \"1954-05-29\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/book/addBook",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"addBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addBooks",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n{\r\n    \"title\" : \"The Two Towers\",\r\n    \"author\" : \"J. R. R. Tolkien\",\r\n    \"publisher\": \"George Allen and Unwin\",\r\n    \"pages\": 351,\r\n    \"publicationDate\": \"1954-11-11\"\r\n},\r\n{\r\n    \"title\" : \"The Return of the King\",\r\n    \"author\" : \"J. R. R. Tolkien\",\r\n    \"publisher\": \"George Allen and Unwin\",\r\n    \"pages\": 416,\r\n    \"publicationDate\": \"1955-08-20\"\r\n},\r\n{\r\n    \"title\" : \"Harry Potter and the Sorcerer's Stone\",\r\n    \"author\" : \"J. K. Rowling\",\r\n    \"publisher\": \"Scholastic\",\r\n    \"pages\": 223,\r\n    \"publicationDate\": \"1997-06-26\"\r\n},\r\n{\r\n    \"title\" : \"Harry Potter and the Chamber of Secrets\",\r\n    \"author\" : \"J. K. Rowling\",\r\n    \"publisher\": \"Scholastic\",\r\n    \"pages\": 251,\r\n    \"publicationDate\": \"1998-07-02\"\r\n},\r\n{\r\n    \"title\" : \"Harry Potter and the Prizoner of Azkaban\",\r\n    \"author\" : \"J. K. Rowling\",\r\n    \"publisher\": \"Scholastic\",\r\n    \"pages\": 317,\r\n    \"publicationDate\": \"1999-07-08\"\r\n}\r\n\r\n\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/book/addBooks",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"addBooks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/book/books",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/book/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/book/bookById/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"bookById",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/book/{title}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/book/bookByTitle/The Fellowship of the Ring",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"bookByTitle",
+						"The Fellowship of the Ring"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/book/{author}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/book/bookByAuthor/J. R. R. Tolkien",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"bookByAuthor",
+						"J. R. R. Tolkien"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/book/{publisher}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/book/bookByPublisher/Scholastic",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"bookByPublisher",
+						"Scholastic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/updateBook",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"title\" : \"The Two Towers\",\r\n    \"author\" : \"J. R. R. Tolkien\",\r\n    \"publisher\": \"George Allen & Unwin\",\r\n    \"pages\": 340,\r\n    \"publicationDate\": \"1954-11-11\",\r\n    \"id\": 2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/book/updateBook",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"updateBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/delete/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/book/delete/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
