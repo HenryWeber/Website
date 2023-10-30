@@ -7,7 +7,7 @@
     <li>Java version 17.0.2</li>
     <li>Spring Boot version 3.1.5</li>
     <li>MySQL Workbench version 8.0</li>
-    <li>Postman version 10.19.10 (Optional)</li>
+    <li>Postman version 10.19.10</li>
   </ul>
 </p>
 
@@ -19,5 +19,7 @@ In the `application.properties` file on line 5 `spring.datasource.url=jdbc:mysql
 If the `application.properties` connection protocol is changed then line 2 `spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver` will also need to change accordingly.<br><br>
 You may also change lines 8 and 9 `spring.datasource.username=root` and `spring.datasource.password=testingpassword` to your database connection's username and password<br><br>
 
-<h3 align="center">Setting up the SQL connection</h3>
+<h3 align="center">Setting up Postman for testing the API</h3>
+
+
 
