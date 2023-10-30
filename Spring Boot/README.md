@@ -35,6 +35,9 @@ Now to check the compiler right click on the project and selecting *Properties* 
 
 <h3 align="center">Running the Application</h3>
 The application can be run in the Spring Tool Suite IDE by right clicking on the project and selecting *Run as* > *Java Application*.<br><br>
+The javadocs are available in 
+When running into any problems make sure to check if they
+
 
 
 
