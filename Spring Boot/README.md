@@ -26,9 +26,10 @@ The Postman json file located in the `Spring Boot>` directory is named `New Coll
 This file can be imported into the Postman application by entering a *Workspace* and selecting *Import*<br><br>
 
 <h3 align="center">Running the Java Application</h3>
+<p>
 The project can be imported into the Spring Tool Suite IDE by selecting *File* > *Import...* > *Maven* > *Existing Maven Projects* and selecting the project
 The application can be run in the Spring Tool Suite IDE by right clicking on the project and selecting *Run as* > *Java Application*
-
+</p>
 
 
 
