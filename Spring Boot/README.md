@@ -1,7 +1,7 @@
 <h1 align="center">Spring Boot Project</h1>
 
 <p align="center">
-  This project uses the following...
+  This project uses the following...<br>
  
   <ul>
     <li>Java version 17.0.2</li>
@@ -10,7 +10,7 @@
     <li>Postman version 10.19.10</li>
   </ul>
 </p>
-
+`application.properties`
 
 <h3 align="center">Setting up the SQL connection</h3>
 <p align="center">
