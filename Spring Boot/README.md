@@ -36,7 +36,7 @@ Now to check the compiler right click on the project and selecting *Properties* 
 <h3 align="center">Running the Application</h3>
 The application can be run in the Spring Tool Suite IDE by right clicking on the project and selecting *Run as* > *Java Application*.<br><br>
 The javadocs are available in the `Spring Boot>demo-6>doc>` directory then you may open the `index.html` file in a browser. 
-When running into any problems make sure to check the `application.properties` file and the Java Project's JDK, happy coding! 	:grinning:
+When running into any problems make sure to check the `application.properties` file and the Java Project's JDK version, happy coding! 	:grinning:
 
 
 
